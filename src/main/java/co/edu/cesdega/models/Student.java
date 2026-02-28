@@ -1,4 +1,4 @@
 package co.edu.cesdega.models;
 
-public class Student {
+public class gStudent {
 }
