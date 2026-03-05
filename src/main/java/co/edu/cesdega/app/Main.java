@@ -54,11 +54,6 @@ public class Main {
         System.out.println(teacher2);
 
 
-
-
-
-
-
 // ejemplo con cosntructor vacio
         person.setFirstName("Jhon");
         person.getFirstName();
