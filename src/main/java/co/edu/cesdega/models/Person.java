@@ -1,18 +1,16 @@
 package co.edu.cesdega.models;
 
-public class Person {
-   private Long userId;
-   private String code;
-   private String documentNumber;
-   private String firstName;
-   private String lastName;
-   private Boolean status;
+public abstract class Person {
+
+    protected String code;
+    protected String documentNumber;
+    protected String firstName;
+    protected String lastName;
+    protected Boolean status;
     //constructor vacio - debe estar siempre los dos constructores, uno para actualzar o otro para llenar
-public Person(){
-}
+ protected Person(){}
 //constructor lleno
-    public Person(Long userId, String code, String documentNumber, String firstName, String lastName, Boolean status) {
-        this.userId = userId;
+protected Person(Long userId, String code, String documentNumber, String firstName, String lastName, Boolean status) {
         this.code = code;
         this.documentNumber = documentNumber;
         this.firstName = firstName;
@@ -20,13 +18,6 @@ public Person(){
         this.status = status;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 
     public String getCode() {
         return code;
@@ -70,7 +61,7 @@ public Person(){
 
     @Override
     public String toString(){
-    return "User Id="+ userId + " " +
+    return
             "code" + code + " " +
             "document number" + documentNumber + " " +
             "fist name" + firstName + " " +

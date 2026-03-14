@@ -2,6 +2,7 @@ package co.edu.cesdega.models;
 //creo un extend porque estas clases heredan lo mismo de persona
 //Cuando es igual con los mismos atributos, de la clase que heredamos no se deben crear nuevos getter y setters
 public class Teacher  extends Person{
+    private Long teacherId;
 
     public Teacher() {
     }

@@ -1,27 +1,37 @@
 package co.edu.cesdega.models;
 
-public class Student extends Person{
-    private String birthyear;
-    //constructor vacio
-    public Student(){};
+public class Student extends Person {
+    private Long studentId;
+    private String birthDate;
 
-    public String getBirthyear() {
-        return birthyear;
+    // Constructor vacío
+    public Student() {
+        super();
     }
 
-    public void setBirthyear(String birthyear) {
-        this.birthyear = birthyear;
-    }
-
-    //constructor lleno
-    public Student(Long userId, String code, String documentNumber, String firstName, String lastName, Boolean status, String birthyear) {
+    // Constructor lleno - Asegúrate que el orden coincida con Person
+    // Person(userId, code, documentNumber, firstName, lastName, status)
+    public Student(Long userId, String code, String documentNumber, String firstName, String lastName, Boolean status, String birthDate) {
         super(userId, code, documentNumber, firstName, lastName, status);
-        this.birthyear = birthyear;
-
+        this.birthDate = birthDate;
+        this.studentId = studentId;
     }
+
+    // Getters y Setters
+    public Long getStudentId() { return studentId; }
+    public void setStudentId(Long studentId) { this.studentId = studentId; }
+
+    public String getBirthDate() { return birthDate; }
+    public void setBirthDate(String birthDate) { this.birthDate = birthDate; }
+
     @Override
     public String toString() {
-        return "Student= " + super.toString() +
-                " birthday = " + birthyear;
+        return "Student{" +
+                "studentId=" + studentId +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", status=" + getStatus() +
+                '}';
     }
 }
