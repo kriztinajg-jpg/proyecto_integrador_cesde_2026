@@ -25,4 +25,3 @@ public interface TeacherRepository {
     List<Teacher> findAll();
     boolean existsById(Long teacherId);
 }
-
