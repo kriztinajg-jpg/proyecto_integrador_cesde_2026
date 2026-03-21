@@ -1,7 +1,7 @@
 package co.edu.cesdega.repository.impl;
 
 import co.edu.cesdega.models.Student;
-gi
+import co.edu.cesdega.repository.StudentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
