@@ -24,7 +24,7 @@ public class StudentRepositoryinMemory implements StudentRepository {
         }
 
         // Validar documento duplicado
-        if (findByDocumentNumber(student.getDocumentNumber())) {
+        if (existsByDocumentNumber(student.getDocumentNumber())) {
             return null;
         }
 
@@ -78,21 +78,9 @@ public class StudentRepositoryinMemory implements StudentRepository {
     }
 
     @Override
-    public boolean findByDocumentNumber(String documentNumber) {
-
-        if (documentNumber == null || documentNumber.isBlank()) {
-            return false;
-        }
-
-        for (Student student : students) {
-            if (student.getDocumentNumber().equals(documentNumber)) {
-                return true;
-            }
-        }
-
+    public boolean existsByDocumentNumber(String documentNumber) {
         return false;
     }
-
     @Override
     public List<Student> findAll() {
         return new ArrayList<>(students); // evita modificar la original

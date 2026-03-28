@@ -1,9 +1,10 @@
-package co.edu.cesdega.repository;
+package co.edu.cesdega.Service;
 
-import co.edu.cesdega.models.Student; // Importamos el MODELO
+import co.edu.cesdega.models.Student;
+
 import java.util.List;
 
-public interface StudentRepository {
+public interface StudentService {
 
     // Crear: Recibe un objeto Student y devuelve el Student creado
     Student create(Student student);
@@ -23,4 +24,5 @@ public interface StudentRepository {
     // Listar todos: Devuelve una lista de objetos Student
     List<Student> findAll();
     boolean existsById(Long StudentId);
+
 }
