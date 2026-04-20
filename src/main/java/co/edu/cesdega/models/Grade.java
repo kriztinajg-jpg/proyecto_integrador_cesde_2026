@@ -4,7 +4,7 @@ public class Grade {
     private Long gradeId;
     private Long groupSubjectId;
     private Long studentId;
-    private Integer finalScore;
+    private Double finalScore;
     private String observation;
 
     //constructor vacio
@@ -12,7 +12,7 @@ public class Grade {
     }
 
     //constructor lleno
-    public Grade(Long gradeId, Long groupSubjectId, Long studentId, Integer finalScore, String observation) {
+    public Grade(Long gradeId, Long groupSubjectId, Long studentId, Double finalScore, String observation) {
         this.gradeId = gradeId;
         this.groupSubjectId = groupSubjectId;
         this.studentId = studentId;
@@ -29,8 +29,8 @@ public class Grade {
     public Long getStudentId() { return studentId; }
     public void setStudentId(Long studentId) { this.studentId = studentId; }
 
-    public Integer getFinalScore() { return finalScore; }
-    public void setFinalScore(Integer finalScore) { this.finalScore = finalScore; }
+    public Double getFinalScore() { return finalScore; }
+    public void setFinalScore(Double finalScore) { this.finalScore = finalScore; }
 
     public String getObservation() { return observation; }
     public void setObservation(String observation) { this.observation = observation; }

@@ -2,6 +2,8 @@ package co.edu.cesdega.models;
 
 public abstract class Person {
 
+    // 1. Agregamos el campo del ID que faltaba
+    protected Long userId;
     protected String code;
     protected String documentType;
     protected String documentNumber;
@@ -11,8 +13,10 @@ public abstract class Person {
 
     public Person() {}
 
-    public Person(String code, String documentType, String documentNumber,
+    // 2. Ajustamos el constructor para que reciba y guarde el userId
+    public Person(Long userId, String code, String documentType, String documentNumber,
                   String firstName, String lastName, String status) {
+        this.userId = userId;
         this.code = code;
         this.documentType = documentType;
         this.documentNumber = documentNumber;
@@ -21,7 +25,15 @@ public abstract class Person {
         this.status = status;
     }
 
-    // GETTERS Y SETTERS
+    public Person(String code, String documentType, String documentNumber, String firstName, String lastName, String status) {
+    }
+
+    // --- GETTERS Y SETTERS ---
+
+    // 3. Agregamos el Getter y Setter para el ID
+    public Long getUserId() { return userId; }
+    public void setUserId(Long userId) { this.userId = userId; }
+
     public String getCode() { return code; }
     public void setCode(String code) { this.code = code; }
 
