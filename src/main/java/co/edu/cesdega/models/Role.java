@@ -1,28 +1,25 @@
 package co.edu.cesdega.models;
 
 public class Role {
-    private Long roleId;
+    private Long id;
     private String name;
 
+    public Role() {}
 
-    public Role() {
-    }
-
-
-    public Role(Long roleId, String name) {
-        this.roleId = roleId;
+    public Role(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-
-    public Long getRoleId() { return roleId; }
-    public void setRoleId(Long roleId) { this.roleId = roleId; }
+    // los métodos se llaman getId y setId
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
     @Override
     public String toString() {
-        return "Role [roleId=" + roleId + ", name=" + name + "]";
+        return "Role [id=" + id + ", name=" + name + "]";
     }
 }
