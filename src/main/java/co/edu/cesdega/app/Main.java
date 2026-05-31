@@ -30,9 +30,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("--- INICIANDO SISTEMA CESDEGA 2026 ---");
 
-        // ==========================================
-        // 1. INSTANCIAS DE SERVICIOS Y REPOSITORIOS
-        // ==========================================
+       //instanciamiento
         GradeRepository gradeRepository = new GradeRepositoryinMemory();
         GradeService gradeService = new GradeServiceImpl(gradeRepository);
 
@@ -42,23 +40,18 @@ public class Main {
         TeacherRepository teacherRepository = new TeacherRepositoryinMemory();
         TeacherService teacherService = new TeacherServiceImpl(teacherRepository);
 
-        // CORREGIDO: Primero creamos el objeto del repositorio con 'new' usando la 'i' minúscula
         GroupRepository groupRepository = new GroupRepositoryinMemory();
-        // Ahora le pasamos la variable válida al servicio
+
         GroupService groupService = new GroupServiceImpl(groupRepository);
 
-        // ==========================================
-        // 2. CREACIÓN DE DATOS DE PRUEBA
-        // ==========================================
+        //Datos de prueba
         Student estudianteUno = new Student(10L, "EST-001", "CC", "12345", "Martin", "Giraldo", "ACTIVO", "2015-05-20");
 
         Group grupoSistemas = new Group();
         grupoSistemas.setGroupId(1L);
         grupoSistemas.setCode("DEV-2026");
 
-        // ==========================================
-        // 3. PRUEBAS DEL SERVICIO DE NOTAS
-        // ==========================================
+       //Pruebas de notas
         System.out.println("\n--- PRUEBAS DE CAPA DE NOTAS ---");
         Grade notaFinal = new Grade();
         notaFinal.setStudentId(estudianteUno.getStudentId());
@@ -81,9 +74,7 @@ public class Main {
             System.out.println("[CONTROL DE ERROR NOTAS] -> " + e.getMessage());
         }
 
-        // ==========================================
-        // 4. PRUEBAS DEL SERVICIO DE MATRÍCULAS
-        // ==========================================
+        //prueba de matricula
         System.out.println("\n--- PRUEBAS DE CAPA DE MATRÍCULAS ---");
 
         // Prueba A: Matrícula Inválida (Sin grupo a propósito)
@@ -110,9 +101,7 @@ public class Main {
             System.out.println("[ALERTA] " + e.getMessage());
         }
 
-        // ==========================================
-        // 5. PRUEBAS DEL SERVICIO DE PROFESORES
-        // ==========================================
+       //prueba de profe
         System.out.println("\n--- PRUEBAS DE CAPA DE PROFESORES ---");
 
         // Prueba A: Intentar registrar un profesor sin documento (Debería fallar)
@@ -157,9 +146,7 @@ public class Main {
             System.out.println("[CONTROL DE ERROR BUSQUEDA] -> " + e.getMessage());
         }
 
-        // ==========================================
-        // 6. PRUEBAS DEL SERVICIO DE GRUPOS
-        // ==========================================
+       //prueba para grupos
         System.out.println("\n--- PRUEBAS DE CAPA DE GRUPOS ---");
 
         // Prueba A: Intentar crear un grupo sin código (Debería fallar)
