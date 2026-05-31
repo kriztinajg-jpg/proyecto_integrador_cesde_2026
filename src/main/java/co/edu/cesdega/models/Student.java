@@ -11,7 +11,9 @@ public class Student extends Person {
 
     public Student(Long studentId, String code, String documentType, String documentNumber,
                    String firstName, String lastName, String status, String birthDate) {
-        super(code, documentType, documentNumber, firstName, lastName, status);
+
+        super(studentId, code, documentType, documentNumber, firstName, lastName, status);
+
         this.studentId = studentId;
         this.birthDate = birthDate;
     }

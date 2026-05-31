@@ -2,7 +2,6 @@ package co.edu.cesdega.models;
 
 public abstract class Person {
 
-    // 1. Agregamos el campo del ID que faltaba
     protected Long userId;
     protected String code;
     protected String documentType;
@@ -25,7 +24,9 @@ public abstract class Person {
         this.status = status;
     }
 
+    // CORREGIDO: Ahora este constructor no está vacío, invoca al de arriba pasándole null al userId
     public Person(String code, String documentType, String documentNumber, String firstName, String lastName, String status) {
+        this(null, code, documentType, documentNumber, firstName, lastName, status);
     }
 
     // --- GETTERS Y SETTERS ---
